@@ -11,7 +11,6 @@ module.exports.isLoggedIn = (req, res, next) => {
     }
     next();
 }
-
 module.exports.saveRedirectUrl = (req, res, next) => {
     if(req.session.redirectUrl) {
         res.locals.redirectUrl = req.session.redirectUrl;
@@ -34,7 +33,6 @@ module.exports.isOwner = async (req, res, next) => {
         next(err);
     }
 }
-
 module.exports.validateListing = (req, res, next) => {
     let {error} = listingSchema.validate(req.body);
 
